@@ -1,21 +1,14 @@
-//
-//  ContentView.swift
-//  DDCmusicload
-//
-//  Created by venny lee on 12/29/25.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @State private var isStarted = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        if isStarted {
+            HomeView()
+        } else {
+            StartView(isStarted : $isStarted)
         }
-        .padding()
     }
 }
 
